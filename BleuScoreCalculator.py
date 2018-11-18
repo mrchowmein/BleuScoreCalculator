@@ -5,7 +5,7 @@ from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
 def bleuScore(ref, cand):
     ref.split()
     cand.split()
-    cc = SmoothingFunction() #smothing is used for short sentences or sentences without 3/4-grams
+    cc = SmoothingFunction() #smoothing is used for short sentences or sentences without 3/4-grams
     return sentence_bleu([ref], cand, smoothing_function=cc.method4)#sentenece_blue() requires sentences to be tokenized list
 
 
@@ -14,7 +14,7 @@ def bleuScore2Ref(ref,ref2, cand):
     ref.split()
     ref2.split()
     cand.split()
-    cc = SmoothingFunction() #smothing is used for short sentences or sentences without 3/4-grams
+    cc = SmoothingFunction() #smoothing is used for short sentences or sentences without 3/4-grams
     return sentence_bleu([ref, ref2], cand, smoothing_function=cc.method4)#sentenece_blue() requires sentences to be tokenized list
 
 
